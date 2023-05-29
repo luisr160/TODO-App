@@ -1,0 +1,22 @@
+.custom-card{
+    width: 250px;
+    height: 180px;
+}
+
+h4{
+    color: #6F7583;
+    font-weight: bold;
+}
+
+
+p{
+    margin-top: 5px;
+}
+
+hr{
+    height:1px;
+    border-width:0;
+    color:black;
+    background-color:black
+}
+

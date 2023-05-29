@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { LiveClockComponent } from './components/live-clock/live-clock.component';
+import { TaskScrollerComponent } from './components/task-scroller/task-scroller.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 
 
 @NgModule({
@@ -14,6 +17,6 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, LiveClockComponent, TaskScrollerComponent, AddTaskComponent]
 })
 export class HomePageModule {}
