@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TaskScrollerComponent implements OnInit {
 
   @Input()
-  public scrollType : string = 'horizontal';
+  public isVertical : boolean = false;
 
   constructor() { }
 

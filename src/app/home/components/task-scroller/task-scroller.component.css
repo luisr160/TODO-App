@@ -20,3 +20,13 @@ hr{
     background-color:black
 }
 
+.horizontal-strip{
+    border-left-color: #A5AAF9;
+    border-left-style: solid;
+    border-left-width: 5px;
+}
+
+.horizontal-strip .custom-card{
+    margin-left: 0px;
+}
+
