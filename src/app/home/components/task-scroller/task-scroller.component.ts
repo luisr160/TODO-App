@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Task_ } from '../../interfaces/task.interface';
+import { TaskManagerService } from '../../services/task-manager.service';
 
 @Component({
   selector: 'app-task-scroller',
@@ -8,11 +10,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TaskScrollerComponent implements OnInit {
 
   @Input()
-  public isVertical : boolean = false;
+  public isVertical:boolean = false;
 
-  constructor() { }
+  public taskList?:Task_[];
+
+  constructor(public taskService:TaskManagerService) { }
 
   ngOnInit(): void {
+    this.taskList = this.taskService.tasks;
   }
 
 }

@@ -1,32 +1,14 @@
-.custom-card{
-    width: 250px;
-    height: 180px;
+.task-scroller-horizontal{
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 200px;
 }
 
-h4{
-    color: #6F7583;
-    font-weight: bold;
+.task-scroller-vertical{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
 }
 
-
-p{
-    margin-top: 5px;
-}
-
-hr{
-    height:1px;
-    border-width:0;
-    color:black;
-    background-color:black
-}
-
-.horizontal-strip{
-    border-left-color: #A5AAF9;
-    border-left-style: solid;
-    border-left-width: 5px;
-}
-
-.horizontal-strip .custom-card{
-    margin-left: 0px;
-}
 

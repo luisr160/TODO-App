@@ -1,0 +1,26 @@
+<ion-card  
+    [ngClass]="{
+        'horizontal-strip custom-card': !isVertical,
+        'vertical-strip custom-card-vertical':isVertical,
+        'todo-style': task.category === 'todo',
+        'ongoing-style': task.category === 'ongoing',
+        'done-style': task.category === 'done'}">
+
+    <ion-card-content>
+      <h4>{{task.title}}</h4>
+      <span>{{task.date}}</span>
+      <hr>
+      <div *ngIf="!isVertical; else showVertical">
+        <span>Descripción:</span>
+        <br>
+        <p>{{task.description}}</p>
+      </div>
+
+      <ng-template #showVertical>
+        <span>Hoy</span>
+        <span>11:52 PM</span>
+      </ng-template>
+      
+    </ion-card-content>
+    
+</ion-card>

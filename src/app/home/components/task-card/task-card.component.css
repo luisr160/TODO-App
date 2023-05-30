@@ -1,0 +1,52 @@
+.custom-card{
+    width: 250px;
+    height: 180px;
+    margin: 8px 4px 8px 18px;
+ 
+}
+
+.custom-card-vertical{
+    width: 250px;
+    height: 110px;
+    margin: 8px 4px 8px 18px;
+}
+
+h4{
+    color: #6F7583;
+    font-weight: bold;
+}
+
+
+p{
+    margin-top: 5px;
+}
+
+hr{
+    height:1px;
+    border-width:0;
+    color:black;
+    background-color:black
+}
+
+.horizontal-strip{
+    border-bottom-style: inset;
+    border-bottom-width: 7px;
+}
+
+.vertical-strip{
+    border-left-style: solid;
+    border-left-width: 7px;
+}
+
+.todo-style{
+    border-color: #A5AAF9;
+}
+
+.ongoing-style{
+    border-color: #FBE9CB;
+}
+
+.done-style{
+    border-color: #FD97C8;
+}
+

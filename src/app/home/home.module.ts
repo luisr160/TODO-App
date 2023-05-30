@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { LiveClockComponent } from './components/live-clock/live-clock.component';
 import { TaskScrollerComponent } from './components/task-scroller/task-scroller.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { TaskCardComponent } from './components/task-card/task-card.component';
 
 
 @NgModule({
@@ -17,6 +18,6 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, LiveClockComponent, TaskScrollerComponent, AddTaskComponent]
+  declarations: [HomePage, LiveClockComponent, TaskScrollerComponent, AddTaskComponent, TaskCardComponent]
 })
 export class HomePageModule {}

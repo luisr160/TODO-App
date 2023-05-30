@@ -1,5 +1,6 @@
 <ion-content [fullscreen]="true" >
-  <div class="home-container">
+
+  <div class="home-container" style="margin-bottom: 0px;">
     <app-live-clock id="live-clock"></app-live-clock>
     <div class="flex-container">
 
@@ -10,8 +11,21 @@
   
       <a>Ver más</a>
     </div>
-
-    <app-task-scroller [isVertical]="false"></app-task-scroller>
-    
   </div>
+
+  <app-task-scroller class="task-scroller-container"> </app-task-scroller>
+
+  <div class="home-container" style="margin-top: 0px;">
+    <div class="flex-container">
+      <div style="display: flex;">
+        <p class="strong-text">Completadas </p>
+      </div>
+      <a>Ver más</a>
+    </div>
+
+    <app-task-scroller [isVertical]="true" class="task-scroller-container"> </app-task-scroller>
+
+  </div>
+  
+ 
 </ion-content>
