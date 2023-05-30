@@ -1,4 +1,4 @@
-.live-clock{
+/* .live-clock{
     display: flex;
    
     justify-content: space-evenly;
@@ -6,7 +6,7 @@
     border-radius: 10px;
 
     
-}
+} */
 
 .live-clock h1{
     font-size: 3rem;

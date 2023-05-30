@@ -8,15 +8,17 @@
 
     <ion-card-content>
       <h4>{{task.title}}</h4>
-      <span>{{task.date}}</span>
-      <hr>
       <div *ngIf="!isVertical; else showVertical">
+        <span>{{task.date}}</span>
+        <hr>
         <span>Descripción:</span>
         <br>
         <p>{{task.description}}</p>
       </div>
 
       <ng-template #showVertical>
+        <p>{{task.description}}</p>
+        <hr>
         <span>Hoy</span>
         <span>11:52 PM</span>
       </ng-template>

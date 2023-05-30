@@ -2,7 +2,7 @@
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-    height: 200px;
+    /* height: 200px; */
 }
 
 .task-scroller-vertical{
