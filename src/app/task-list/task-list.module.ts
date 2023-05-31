@@ -2,16 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskListPageComponent } from './pages/task-list-page/task-list-page.component';
 import { TaskSnippetComponent } from './components/task-snippet/task-snippet.component';
+import { IonicModule } from '@ionic/angular';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
 
 @NgModule({
   declarations: [
     TaskListPageComponent,
-    TaskSnippetComponent
+    TaskSnippetComponent,
+    SearchBarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    IonicModule
   ],
   exports:[
     TaskListPageComponent

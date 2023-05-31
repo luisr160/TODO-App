@@ -1,0 +1,20 @@
+.search-container{
+    padding: 15px 18px 10px 18px;
+    background-color: #f5f5f5;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+ion-searchbar.custom{
+    --border-radius:12px;
+    --background: #FFFFFF;
+    --placeholder-color: #000000;
+    --placeholder-font-weight:bold;
+    --placeholder-opacity:0.7;
+    --box-shadow:0px;
+
+    border: 3px solid #EBEEF4;
+    border-radius: 12px;
+    padding: 0px;
+}

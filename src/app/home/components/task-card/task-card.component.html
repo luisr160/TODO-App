@@ -2,9 +2,9 @@
     [ngClass]="{
         'horizontal-strip custom-card': !isVertical,
         'vertical-strip custom-card-vertical':isVertical,
-        'todo-style': task.category === 'todo',
-        'ongoing-style': task.category === 'ongoing',
-        'done-style': task.category === 'done'}">
+        'personal-style': task.category === 'personal',
+        'work-style': task.category === 'work',
+        'misc-style': task.category === 'misc'}">
 
     <ion-card-content>
       <h4>{{task.title}}</h4>

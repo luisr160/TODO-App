@@ -9,28 +9,28 @@ export class TaskManagerService {
   private _taskList:Task_[] = [
     {
       title:'Task 1',
-      category: 'todo',
+      category: 'personal',
       description: 'Esto es una descripción de la prueba.',
       date:'30/05/2023',
       hour:'9:07'
     },
     {
       title:'Task 2',
-      category: 'ongoing',
+      category: 'work',
       description: 'Esto es una descripción de la prueba.',
       date:'30/05/2023',
       hour:'9:07'
     },
     {
       title:'Task 3',
-      category: 'done',
+      category: 'misc',
       description: 'Esto es una descripción de la prueba.',
       date:'30/05/2023',
       hour:'9:07'
     },
     {
       title:'Task 4',
-      category: 'todo',
+      category: 'personal',
       description: 'Esto es una descripción de la prueba.',
       date:'30/05/2023',
       hour:'9:07'

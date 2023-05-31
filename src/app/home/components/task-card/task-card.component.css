@@ -39,15 +39,15 @@ hr{
     border-left-width: 7px;
 }
 
-.todo-style{
+.personal-style{
     border-color: #A5AAF9;
 }
 
-.ongoing-style{
+.work-style{
     border-color: #FBE9CB;
 }
 
-.done-style{
+.misc-style{
     border-color: #FD97C8;
 }
 
