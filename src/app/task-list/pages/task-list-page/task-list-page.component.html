@@ -1,6 +1,6 @@
 <div>
     <app-search-bar></app-search-bar>
     <ion-list class="custom"></ion-list>
-        <app-task-snippet></app-task-snippet>
+        <app-task-snippet *ngFor="let task of tasks" [snippetTask]="task"></app-task-snippet>
     <ion-list/>
 </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Task_ } from 'src/app/home/interfaces/task.interface';
 
 @Component({
   selector: 'app-task-snippet',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-snippet.component.css']
 })
 export class TaskSnippetComponent implements OnInit {
+
+  @Input()
+  public snippetTask!:Task_;
 
   constructor() { }
 

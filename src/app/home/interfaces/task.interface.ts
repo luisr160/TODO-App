@@ -3,5 +3,6 @@ export interface Task_{
     category:string,
     description:string,
     date: string,
-    hour: string
+    hour: string,
+    isCompleted:boolean
 }

@@ -12,28 +12,32 @@ export class TaskManagerService {
       category: 'personal',
       description: 'Esto es una descripción de la prueba.',
       date:'30/05/2023',
-      hour:'9:07'
+      hour:'9:07',
+      isCompleted : true
     },
     {
       title:'Task 2',
       category: 'work',
       description: 'Esto es una descripción de la prueba.',
       date:'30/05/2023',
-      hour:'9:07'
+      hour:'9:07',
+      isCompleted : false
     },
     {
       title:'Task 3',
       category: 'misc',
       description: 'Esto es una descripción de la prueba.',
       date:'30/05/2023',
-      hour:'9:07'
+      hour:'9:07',
+      isCompleted : true
     },
     {
       title:'Task 4',
       category: 'personal',
       description: 'Esto es una descripción de la prueba.',
       date:'30/05/2023',
-      hour:'9:07'
+      hour:'9:07',
+      isCompleted : false
     }
   ]
 

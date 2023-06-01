@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Task_ } from 'src/app/home/interfaces/task.interface';
+import { TaskManagerService } from 'src/app/home/services/task-manager.service';
 
 
 @Component({
@@ -8,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskListPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private taskManagerService:TaskManagerService) { }
+
+  get tasks():Task_[]{
+    return this.taskManagerService.tasks;
+  }
 
   ngOnInit(): void {
   }
