@@ -1,0 +1,60 @@
+
+.add-task-container{
+    margin: 10px;
+}
+
+.add-task-container h1{
+    font-weight: bold;
+    text-align: center;
+}
+
+.add-task-container div{
+    margin: 15px 5px 15px 5px;
+}
+
+.date-container{
+    display: flex;
+}
+
+.date-container div{
+    margin-top:0px;
+    margin-bottom: 0px;
+}
+
+.add-task-container .button-container{
+    margin-top: 25px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ion-button.add-task-button{
+    min-width: 43vw;
+    min-height: 45px ;
+}
+
+ion-item.description-item{
+    --padding-bottom: 20px;
+}
+
+ion-input.custom{
+    --border-color: rgb(148, 148, 148);
+    --border-width:1px;
+    --border-style:solid;
+    --border-radius:12px;
+}
+
+ion-select.custom{
+    --border-color: rgb(148, 148, 148);
+    --border-width:1px;
+    --border-style:solid;
+    --border-radius:12px;
+}
+
+ion-textarea.custom{
+    --border-color: rgb(148, 148, 148);
+    --border-width:1px;
+    --border-style:solid;
+    --border-radius:12px;
+}
+

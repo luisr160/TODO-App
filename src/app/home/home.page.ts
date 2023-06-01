@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TaskManagerService } from './services/task-manager.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() { }
+  constructor(private taskManagerService:TaskManagerService) { }
+
+  get numberOfTasks():number{
+    return this.taskManagerService.tasks.length;
+  }
 
   ngOnInit(): void {
   }

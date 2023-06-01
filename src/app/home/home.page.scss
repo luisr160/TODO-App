@@ -7,6 +7,15 @@
   overflow-y: hidden;
 }
 
+.home-container span{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style:normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  color: #535353;
+}
+
 .flex-container{
   display: flex;
   flex-direction: row;
@@ -21,6 +30,10 @@
   font-size: 16px;
   line-height: 24px;
 
+}
+
+.flex-container a{
+  text-decoration: none;
 }
 
 #live-clock{
@@ -39,4 +52,22 @@
 
 .task-scroller-container{
   margin-top: -5px;
+}
+
+ion-icon{
+  font-size: 100px;
+  opacity: 0.65;
+}
+
+ion-fab-button{
+  --border-radius: 15px;
+  --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+ion-modal{
+  --height:auto;
+  --border-radius:24px 24px 0px 0px;
 }

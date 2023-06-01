@@ -13,7 +13,15 @@
     </div>
   </div>
 
-  <app-task-scroller class="task-scroller-container"> </app-task-scroller>
+  <app-task-scroller *ngIf="numberOfTasks !== 0; else noTasksAvailable" class="task-scroller-container"> </app-task-scroller>
+  
+  <ng-template #noTasksAvailable>
+    <div class="home-container">
+      <ion-icon name="cube-outline"></ion-icon>
+      <span>Nada que mostrar :c</span>
+    </div>
+  </ng-template>
+    
 
   <div class="home-container" style="margin-top: 0px;">
     <div class="flex-container">
@@ -23,9 +31,28 @@
       <a href="home/list">Ver más</a>
     </div>
 
-    <app-task-scroller [isVertical]="true" class="task-scroller-container"> </app-task-scroller>
-
+    <app-task-scroller *ngIf="numberOfTasks !== 0; else noTasksAvailable" [isVertical]="true" class="task-scroller-container"> </app-task-scroller>
+ 
+    <ng-template #noTasksAvailable>
+      <div class="home-container">
+        <ion-icon name="cube-outline"></ion-icon>
+        <span>Nada que mostrar :c</span>
+      </div>
+    </ng-template>
+  
   </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button id="open-modal" color="secondary" mode="ios">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-modal #modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+      <app-add-task></app-add-task>
+    </ng-template>
+  </ion-modal>
   
  
 </ion-content>
