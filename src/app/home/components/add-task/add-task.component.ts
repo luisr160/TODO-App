@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Task_ } from '../../interfaces/task.interface';
+import { FormGroup,FormBuilder,Validators } from '@angular/forms';
+import { ModalController } from '@ionic/angular';
+import { TaskManagerService } from '../../services/task-manager.service';
 
 @Component({
   selector: 'app-add-task',
@@ -8,7 +11,10 @@ import { Task_ } from '../../interfaces/task.interface';
 })
 export class AddTaskComponent implements OnInit {
 
+  public addTaskForm:FormGroup = new FormGroup({});
+  
   public newTaskData:Task_ = {
+    id:'',
     title:'',
     category:'',
     description:'',
@@ -17,22 +23,24 @@ export class AddTaskComponent implements OnInit {
     isCompleted:false
   }
 
-  constructor() { }
-
-  // public get isValidForm():boolean{
-  //   const {title,category,description,date,hour} = {...this.newTaskData};
-  //   console.log({title,category,description,date,hour});
-  //   if(title === '' && category === '' && description === '' && date === '' && hour === '' ){
-  //     return false;
-  //   }
-  //   return true;
-  // }
+  constructor(private formBuilder:FormBuilder, private modalCtrl:ModalController, private taskManager:TaskManagerService) { }
 
   ngOnInit(): void {
+    this.addTaskForm = this.formBuilder.group({
+      title:['',Validators.required],
+      category:['',Validators.required],
+      description:['',Validators.required],
+      date:['',Validators.required],
+      hour:['',Validators.required],
+    })
   }
 
-  submitForm():void{
-
+  public onCancel():Promise<boolean>{
+    return this.modalCtrl.dismiss(null,'cancel');
   }
 
+  submitForm():Promise<boolean>{
+    this.taskManager.addTask(this.newTaskData);
+    return this.modalCtrl.dismiss(null,'cancel');
+  }
 }

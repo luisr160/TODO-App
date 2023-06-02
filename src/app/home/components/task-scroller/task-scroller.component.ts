@@ -12,12 +12,13 @@ export class TaskScrollerComponent implements OnInit {
   @Input()
   public isVertical:boolean = false;
 
+  @Input()
   public taskList?:Task_[];
 
   constructor(public taskService:TaskManagerService) { }
 
   ngOnInit(): void {
-    this.taskList = this.taskService.tasks;
+    // this.taskList = this.taskService.tasks;
   }
 
 }

@@ -1,47 +1,53 @@
-<div class="add-task-container">
-    <h1>Crear nueva tarea</h1>
-    <hr>
-    <ion-list>
-        
-        <div>
-            <ion-label position="floating">Titulo</ion-label>
-            <ion-input class="custom" fill="outline" [(ngModel)]="newTaskData.title" name="title" type="text" placeholder="Agrega el titulo de la tarea aquí"></ion-input>
-        </div>
+<ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+        <div class="add-task-container">
+            <h1>Crear nueva tarea</h1>
+            <hr>
+            <ion-list>
+                <form [formGroup]="addTaskForm" (ngSubmit)="submitForm()">
+                    <div>
+                        <ion-label position="floating">Titulo</ion-label>
+                        <ion-input class="custom" fill="outline" formControlName="title" [(ngModel)]="newTaskData.title" name="title" type="text" placeholder="Agrega el titulo de la tarea aquí"></ion-input>
+                    </div>
+                        
+                    <div>
+                        <ion-label position="floating">Categoría</ion-label>
+                        <ion-select class="custom" interface="popover" formControlName="category" fill="outline" [(ngModel)]="newTaskData.category" name="category" placeholder="Selecciona una categoría">
+                            <ion-select-option value="personal">Personal</ion-select-option>
+                            <ion-select-option value="work">Work</ion-select-option>
+                            <ion-select-option value="misc">Miscelaneous</ion-select-option>
+                        </ion-select>
+                    </div>        
+                        
+                    <div>
+                        <ion-label position="floating">Descripción</ion-label>
+                        <ion-textarea [(ngModel)]="newTaskData.description" formControlName="description" class="custom" name="description"
+                            fill="outline" 
+                            rows="4"
+                            placeholder="Añade una breve descripción aquí">
+                        </ion-textarea>
+                    </div>
+                       
+                    <div class="date-container">
+                            <div>
+                                <ion-label position="floating">Fecha</ion-label>
+                                <ion-input class="custom" fill="outline" formControlName="date" [(ngModel)]="newTaskData.date" name="date" type="text" placeholder="DD/MM/AAAA"></ion-input>
+                            </div>
+                            
+                            <div>
+                                <ion-label position="floating">Hora</ion-label>
+                                <ion-input class="custom" fill="outline" formControlName="hour" [(ngModel)]="newTaskData.hour" name="hour" type="text" placeholder="hh:mm --"></ion-input>
+                            </div>
+                    </div>
             
-        <div>
-            <ion-label position="floating">Categoría</ion-label>
-            <ion-select class="custom" interface="popover" fill="outline" [(ngModel)]="newTaskData.category" name="category" placeholder="Selecciona una categoría">
-                <ion-select-option value="personal">Personal</ion-select-option>
-                <ion-select-option value="work">Work</ion-select-option>
-                <ion-select-option value="misc">Miscelaneous</ion-select-option>
-            </ion-select>
-        </div>        
-            
-        <div>
-            <ion-label position="floating">Descripción</ion-label>
-            <ion-textarea [(ngModel)]="newTaskData.description" class="custom" name="description"
-                fill="outline" 
-                rows="4"
-                placeholder="Añade una breve descripción aquí">
-            </ion-textarea>
-        </div>
-           
-        <div class="date-container">
-                <div>
-                    <ion-label position="floating">Fecha</ion-label>
-                    <ion-input class="custom" fill="outline" [(ngModel)]="newTaskData.date" name="date" type="text" placeholder="DD/MM/AAAA"></ion-input>
-                </div>
+                    <div class="button-container">
+                        <ion-button class="add-task-button" fill="outline" color="danger" (click)="onCancel()">Cancelar</ion-button>
+                        <ion-button class="add-task-button" type = 'submit' color="primary" [disabled]="addTaskForm.invalid">Crear</ion-button>
+                    </div>
+                </form>
                 
-                <div>
-                    <ion-label position="floating">Hora</ion-label>
-                    <ion-input class="custom" fill="outline" [(ngModel)]="newTaskData.hour" name="hour" type="text" placeholder="hh:mm --"></ion-input>
-                </div>
+            
+            </ion-list>
         </div>
-
-        <div class="button-container">
-            <ion-button class="add-task-button" fill="outline" color="danger">Cancelar</ion-button>
-            <ion-button class="add-task-button" type = 'submit' color="primary" (click)="submitForm()" [disabled]="false">Crear</ion-button>
-        </div>
-    
-    </ion-list>
-</div>
+    </ng-template>
+</ion-modal>

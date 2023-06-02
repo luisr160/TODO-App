@@ -58,3 +58,8 @@ ion-textarea.custom{
     --border-radius:12px;
 }
 
+ion-modal{
+    --height:auto;
+    --border-radius:24px 24px 0px 0px;
+}
+

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
@@ -18,7 +18,8 @@ import { TaskListModule } from '../task-list/task-list.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    TaskListModule
+    TaskListModule,
+    ReactiveFormsModule
   ],
   declarations: [HomePage, LiveClockComponent, TaskScrollerComponent, AddTaskComponent, TaskCardComponent]
 })

@@ -6,14 +6,14 @@
 
       <div style="display: flex;">
         <p class="strong-text">En progreso </p>
-        <p class="light-text">(#)</p>
+        <p class="light-text">({{incompletedTasks.length}})</p>
       </div>
   
       <a href="home/list">Ver más</a>
     </div>
   </div>
 
-  <app-task-scroller *ngIf="numberOfTasks !== 0; else noTasksAvailable" class="task-scroller-container"> </app-task-scroller>
+  <app-task-scroller *ngIf="numberOfTasks !== 0; else noTasksAvailable" [taskList]="incompletedTasks" class="task-scroller-container"> </app-task-scroller>
   
   <ng-template #noTasksAvailable>
     <div class="home-container">
@@ -31,7 +31,7 @@
       <a href="home/list">Ver más</a>
     </div>
 
-    <app-task-scroller *ngIf="numberOfTasks !== 0; else noTasksAvailable" [isVertical]="true" class="task-scroller-container"> </app-task-scroller>
+    <app-task-scroller *ngIf="numberOfTasks !== 0; else noTasksAvailable" [isVertical]="true" [taskList]="completedTasks" class="task-scroller-container"> </app-task-scroller>
  
     <ng-template #noTasksAvailable>
       <div class="home-container">
@@ -48,11 +48,6 @@
     </ion-fab-button>
   </ion-fab>
 
-  <ion-modal #modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
-    <ng-template>
-      <app-add-task></app-add-task>
-    </ng-template>
-  </ion-modal>
-  
+  <app-add-task></app-add-task>
  
 </ion-content>
