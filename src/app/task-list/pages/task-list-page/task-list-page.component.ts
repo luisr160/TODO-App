@@ -10,13 +10,21 @@ import { TaskManagerService } from 'src/app/home/services/task-manager.service';
 })
 export class TaskListPageComponent implements OnInit {
 
+  public taskList:Task_[] = [];
+
   constructor(private taskManagerService:TaskManagerService) { }
 
-  get tasks():Task_[]{
-    return this.taskManagerService.tasks;
+  get tasklist():Task_[]{
+    return this.taskList;
+  }
+
+
+  public searchTasks(term:string):void{
+    this.taskList = this.taskManagerService.searchTasks(term);
   }
 
   ngOnInit(): void {
+    this.taskList = this.taskManagerService.searchTasks('');
   }
 
 }

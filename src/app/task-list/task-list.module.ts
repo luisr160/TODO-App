@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskListPageComponent } from './pages/task-list-page/task-list-page.component';
 import { TaskSnippetComponent } from './components/task-snippet/task-snippet.component';
-import { IonicModule } from '@ionic/angular';
+import { FormsModule} from '@angular/forms';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { TaskListPageRoutingModule } from './task-list-routing.module';
+import { IonicModule } from '@ionic/angular';
 
 
 
@@ -15,10 +17,12 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
   ],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    TaskListPageRoutingModule,
+    FormsModule
   ],
   exports:[
     TaskListPageComponent
   ]
 })
-export class TaskListModule { }
+export class TaskListPageModule { }

@@ -1,5 +1,5 @@
 
-<ion-item-sliding>
+<ion-item-sliding #slidingItem>
     <!-- TODO: 
         Conectar task list page con el servicio de tasks.
         Interpolar campos dentro del snippet.
@@ -36,11 +36,11 @@
     </ion-item>
 
     <ion-item-options side="end">
-        <ion-item-option >
+        <ion-item-option type="button" (click)="completeTask(snippetTask.id,snippetTask.isCompleted,slidingItem)">
         <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
         </ion-item-option>
 
-        <ion-item-option color="danger">
+        <ion-item-option type="button" (click)="deleteTask(snippetTask.id)" color="danger">
         <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-item-option>
 

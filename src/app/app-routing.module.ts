@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: 'list',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./task-list/task-list.module').then( m => m.TaskListPageModule)
   },
   {
     path: '',

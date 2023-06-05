@@ -12,9 +12,10 @@
 
 }
 
-h4{
+.strong{
     color: #6F7583;
     font-weight: bold;
+    padding-right: 5px;
 }
 
 

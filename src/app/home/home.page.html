@@ -9,7 +9,7 @@
         <p class="light-text">({{incompletedTasks.length}})</p>
       </div>
   
-      <a href="home/list">Ver más</a>
+      <a [routerLink]="['/list']">Ver más</a>
     </div>
   </div>
 
@@ -28,7 +28,7 @@
       <div style="display: flex;">
         <p class="strong-text">Completadas </p>
       </div>
-      <a href="home/list">Ver más</a>
+      <a [routerLink]="['/list']">Ver más</a>
     </div>
 
     <app-task-scroller *ngIf="numberOfTasks !== 0; else noTasksAvailable" [isVertical]="true" [taskList]="completedTasks" class="task-scroller-container"> </app-task-scroller>

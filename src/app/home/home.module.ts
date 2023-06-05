@@ -9,7 +9,7 @@ import { LiveClockComponent } from './components/live-clock/live-clock.component
 import { TaskScrollerComponent } from './components/task-scroller/task-scroller.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
-import { TaskListModule } from '../task-list/task-list.module';
+import { TaskListPageModule } from '../task-list/task-list.module';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { TaskListModule } from '../task-list/task-list.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    TaskListModule,
+    TaskListPageModule,
     ReactiveFormsModule
   ],
   declarations: [HomePage, LiveClockComponent, TaskScrollerComponent, AddTaskComponent, TaskCardComponent]

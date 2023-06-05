@@ -42,6 +42,7 @@ ion-input.custom{
     --border-width:1px;
     --border-style:solid;
     --border-radius:12px;
+
 }
 
 ion-select.custom{
@@ -61,5 +62,9 @@ ion-textarea.custom{
 ion-modal{
     --height:auto;
     --border-radius:24px 24px 0px 0px;
+}
+
+ion-input.date-time-input{
+    --padding-top:10%;
 }
 

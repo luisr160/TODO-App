@@ -3,6 +3,7 @@ import { Task_ } from '../../interfaces/task.interface';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { TaskManagerService } from '../../services/task-manager.service';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-add-task',
@@ -10,6 +11,8 @@ import { TaskManagerService } from '../../services/task-manager.service';
   styleUrls: ['./add-task.component.css']
 })
 export class AddTaskComponent implements OnInit {
+
+  public today:string = format(new Date(), "yyyy-LL-dd");
 
   public addTaskForm:FormGroup = new FormGroup({});
   
@@ -36,11 +39,14 @@ export class AddTaskComponent implements OnInit {
   }
 
   public onCancel():Promise<boolean>{
+    console.log(this.addTaskForm.value)
+    this.addTaskForm.reset();
     return this.modalCtrl.dismiss(null,'cancel');
   }
 
   submitForm():Promise<boolean>{
     this.taskManager.addTask(this.newTaskData);
+    this.addTaskForm.reset();
     return this.modalCtrl.dismiss(null,'cancel');
   }
 }
