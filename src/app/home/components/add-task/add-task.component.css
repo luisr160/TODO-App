@@ -13,6 +13,7 @@
 
 .date-container{
     display: flex;
+    justify-content: space-between;
 }
 
 .date-container div{
