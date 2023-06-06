@@ -1,5 +1,7 @@
 {
   "name": "L-TODO-app",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
