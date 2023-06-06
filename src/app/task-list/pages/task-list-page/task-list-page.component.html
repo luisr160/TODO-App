@@ -1,4 +1,4 @@
-<div>
+<div class="task-list-container">
     <app-search-bar (onSearch)="searchTasks($event)"></app-search-bar>
     <ion-list class="custom"></ion-list>
         <app-task-snippet *ngFor="let task of tasklist" [snippetTask]="task"></app-task-snippet>

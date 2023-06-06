@@ -2,8 +2,12 @@
     padding: 15px 18px 10px 18px;
     background-color: #ededed;
     min-height: 100px;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
+}
+
+.search-container ion-icon{
+    font-size: 24px;
 }
 
 ion-searchbar.custom{
@@ -13,6 +17,8 @@ ion-searchbar.custom{
     --placeholder-font-weight:bold;
     --placeholder-opacity:0.7;
     --box-shadow:0px;
+
+    padding-top: 0px;
 
     /* border: 3px solid #EBEEF4;
     border-radius: 12px;
