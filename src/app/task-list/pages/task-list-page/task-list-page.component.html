@@ -1,6 +1,6 @@
 <div class="task-list-container">
     <app-search-bar (onSearch)="updateTerm($event)"></app-search-bar>
     <ion-list class="custom"></ion-list>
-        <app-task-snippet (onDelete)="deleteAndUpdateTasks($event)" *ngFor="let task of tasklist" [snippetTask]="task"></app-task-snippet>
+        <app-task-snippet (onDelete)="deleteTasks($event)" *ngFor="let task of tasklist" [snippetTask]="task"></app-task-snippet>
     <ion-list/>
 </div>

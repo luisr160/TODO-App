@@ -21,8 +21,8 @@ export class AddTaskComponent implements OnInit {
     title:'',
     category:'',
     description:'',
-    date:'',
-    hour:'',
+    date:'mm/dd/yyyy',
+    hour:'--:-- --',
     isCompleted:false
   }
 

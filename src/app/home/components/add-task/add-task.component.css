@@ -66,6 +66,7 @@ ion-modal{
 
 ion-input.date-time-input{
     --padding-top:10%;
+    min-width: 85px;
 }
 
 @media only screen and (min-width:768px){

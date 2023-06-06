@@ -20,9 +20,9 @@ export class TaskListPageComponent implements OnInit {
     return this.taskManagerService.searchTasks(this.searchTerm);
   }
 
-  public deleteAndUpdateTasks(id:string):void{
+  public deleteTasks(id:string):void{
     this.taskManagerService.deleteTask(id);
-    this.taskList = this.taskManagerService.tasks
+    // this.taskList = this.taskManagerService.tasks
   }
 
   public updateTerm(term:string):void{
