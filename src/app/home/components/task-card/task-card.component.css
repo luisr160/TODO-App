@@ -12,6 +12,10 @@
 
 }
 
+.custom-card-vertical .header{
+    display: flex;
+}
+
 .strong{
     color: #6F7583;
     font-weight: bold;
@@ -52,3 +56,8 @@ hr{
     border-color: #FD97C8;
 }
 
+ion-checkbox {
+    --checkbox-background-checked: #0d9277;
+    --checkmark-width: 2px;
+    --border-width: 3px;
+}

@@ -7,8 +7,9 @@
         'misc-style': task.category === 'misc'}">
 
     <ion-card-content>
-      <h4 class="strong">{{task.title}}</h4>
       <div *ngIf="!isVertical; else showVertical">
+        <h4 class="strong">{{task.title}}</h4>
+      
         <span>{{formatedDate(task.date)}}</span>
         <hr>
         <span>Descripción:</span>
@@ -17,7 +18,15 @@
       </div>
 
       <ng-template #showVertical>
-        <p>{{task.description}}</p>
+
+        <div class="header">
+          <div>
+            <h4 class="strong">{{task.title}}</h4>
+            <p>{{task.description}}</p>
+          </div>
+          <ion-checkbox disabled="true" [checked]="true" mode="ios"></ion-checkbox>
+        </div>
+
         <hr>
         <span class="strong">{{formatedDate(task.date).split(' ')[1] | titlecase }} {{formatedDate(task.date).split(' ')[0]}}</span>
         <span>{{giveTimeFormat(task.hour)}}</span>
