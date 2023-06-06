@@ -9,15 +9,15 @@ import { format } from 'date-fns';
 export class LiveClockComponent implements OnInit{
 
   public currentTime:string = '';
-  public hour:string = '';
-  public minutes:string = '';
+  public date:string = '7 Jun';
+  public time:string = '12:00 PM';
 
 
   constructor() {
 
     setInterval(() => {
       this.currentTime = format(new Date(),'d LLL - hh:mm aa'); //set time variable with current date
-      [this.hour,this.minutes] = this.currentTime.split('-');
+      [this.date,this.time] = this.currentTime.split('-');
      }, 1000);
 
   }
