@@ -9,25 +9,24 @@ import { format } from 'date-fns';
 export class LiveClockComponent implements OnInit{
 
   public currentTime:string = '';
-  public dateArray!:string[];
+  public hour:string = '';
+  public minutes:string = '';
 
-  constructor() { }
+
+  constructor() {
+
+    setInterval(() => {
+      this.currentTime = format(new Date(),'d LLL - hh:mm aa'); //set time variable with current date
+      [this.hour,this.minutes] = this.currentTime.split('-');
+     }, 1000);
+
+  }
 
   // get liveTime():string[]{
   //   return this.liveTimeService.dateArray;
   // }
 
-  private async updateCurrentTime(){
-    const now = new Date();
-    this.currentTime = format(now,'d LLL - hh:mm aa');
-    this.dateArray = this.currentTime.split('-');
-    //console.log(this.dateArray)
-  }
-
   ngOnInit(): void {
-    setInterval(()=>{
-      this.updateCurrentTime();
-    }, 1000);
   }
 
 }

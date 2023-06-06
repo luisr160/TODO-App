@@ -7,44 +7,7 @@ import { v4 as uuid } from 'uuid';
 })
 export class TaskManagerService {
 
-  private _taskList:Task_[] = [
-    {
-      id: uuid(),
-      title:'Task 1',
-      category: 'personal',
-      description: 'Esto es una descripción de la prueba.',
-      date:'2023-06-05',
-      hour:'9:07',
-      isCompleted : true
-    },
-    {
-      id: uuid(),
-      title:'Task 2',
-      category: 'work',
-      description: 'Esto es una descripción de la prueba.',
-      date:'2023-06-04',
-      hour:'9:07',
-      isCompleted : false
-    },
-    {
-      id: uuid(),
-      title:'Task 3',
-      category: 'misc',
-      description: 'Esto es una descripción de la prueba.',
-      date:'2023-01-30',
-      hour:'9:07',
-      isCompleted : true
-    },
-    {
-      id: uuid(),
-      title:'Task 4',
-      category: 'personal',
-      description: 'Esto es una descripción de la prueba.',
-      date:'2023-06-06',
-      hour:'9:07',
-      isCompleted : false
-    }
-  ];
+  private _taskList:Task_[] = [];
 
   constructor() { }
 
@@ -79,3 +42,41 @@ export class TaskManagerService {
     return [...this._taskList]
   }
 }
+
+
+  // {
+    //   id: uuid(),
+    //   title:'Task 1',
+    //   category: 'personal',
+    //   description: 'Esto es una descripción de la prueba.',
+    //   date:'2023-06-05',
+    //   hour:'9:07',
+    //   isCompleted : true
+    // },
+    // {
+    //   id: uuid(),
+    //   title:'Task 2',
+    //   category: 'work',
+    //   description: 'Esto es una descripción de la prueba.',
+    //   date:'2023-06-04',
+    //   hour:'9:07',
+    //   isCompleted : false
+    // },
+    // {
+    //   id: uuid(),
+    //   title:'Task 3',
+    //   category: 'misc',
+    //   description: 'Esto es una descripción de la prueba.',
+    //   date:'2023-01-30',
+    //   hour:'9:07',
+    //   isCompleted : true
+    // },
+    // {
+    //   id: uuid(),
+    //   title:'Task 4',
+    //   category: 'personal',
+    //   description: 'Esto es una descripción de la prueba.',
+    //   date:'2023-06-06',
+    //   hour:'9:07',
+    //   isCompleted : false
+    // }
