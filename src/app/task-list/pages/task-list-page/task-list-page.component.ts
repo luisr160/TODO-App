@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Task_ } from 'src/app/home/interfaces/task.interface';
 import { TaskManagerService } from 'src/app/home/services/task-manager.service';
 
@@ -12,19 +12,25 @@ export class TaskListPageComponent implements OnInit {
 
   public taskList:Task_[] = [];
 
+  public searchTerm:string = '';
+
   constructor(private taskManagerService:TaskManagerService) { }
 
   get tasklist():Task_[]{
-    return this.taskList;
+    return this.taskManagerService.searchTasks(this.searchTerm);
   }
 
+  public deleteAndUpdateTasks(id:string):void{
+    this.taskManagerService.deleteTask(id);
+    this.taskList = this.taskManagerService.tasks
+  }
 
-  public searchTasks(term:string):void{
-    this.taskList = this.taskManagerService.searchTasks(term);
+  public updateTerm(term:string):void{
+    this.searchTerm = term;
   }
 
   ngOnInit(): void {
-    this.taskList = this.taskManagerService.searchTasks('');
+    // this.taskList = this.taskManagerService.searchTasks('');
   }
 
 }

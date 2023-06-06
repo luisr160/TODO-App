@@ -45,6 +45,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   submitForm():Promise<boolean>{
+    this.newTaskData.title = this.newTaskData.title.toLowerCase();
     this.taskManager.addTask(this.newTaskData);
     this.addTaskForm.reset();
     return this.modalCtrl.dismiss(null,'cancel');

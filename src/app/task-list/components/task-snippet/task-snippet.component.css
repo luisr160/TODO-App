@@ -21,6 +21,7 @@
     font-weight: 700;
     font-size: 18px;
     color: #6F7583;
+    text-overflow: ellipsis;
 }
 
 .strong-small{
