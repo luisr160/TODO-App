@@ -14,8 +14,12 @@ export class HomePage {
 
   constructor(private taskManagerService:TaskManagerService) { }
 
-  get numberOfTasks():number{
-    return this.taskManagerService.tasks.length;
+  get numberOfIncompleteTasks():number{
+    return this.taskManagerService.tasks.filter(task => !task.isCompleted).length;
+  }
+
+  get numberOfCompletedTasks():number{
+    return this.taskManagerService.tasks.filter(task => task.isCompleted).length;
   }
 
   get completedTasks():Task_[]{

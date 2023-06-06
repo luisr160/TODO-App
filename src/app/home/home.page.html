@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <app-task-scroller *ngIf="numberOfTasks !== 0; else noTasksAvailable" [taskList]="incompletedTasks" class="task-scroller-container"> </app-task-scroller>
+  <app-task-scroller *ngIf="numberOfIncompleteTasks !== 0; else noTasksAvailable" [taskList]="incompletedTasks" class="task-scroller-container"> </app-task-scroller>
   
   <ng-template #noTasksAvailable>
     <div class="home-container">
@@ -33,9 +33,9 @@
       <a [routerLink]="['/list']">Ver más</a>
     </div>
 
-    <app-task-scroller *ngIf="numberOfTasks !== 0; else noTasksAvailable" [isVertical]="true" [taskList]="completedTasks" class="task-scroller-container"> </app-task-scroller>
+    <app-task-scroller *ngIf="numberOfCompletedTasks !== 0; else noTasksAvailable_V" [isVertical]="true" [taskList]="completedTasks" class="task-scroller-container"> </app-task-scroller>
  
-    <ng-template #noTasksAvailable>
+    <ng-template #noTasksAvailable_V>
       <div class="home-container">
         <ion-icon name="cube-outline"></ion-icon>
         <span>Nada que mostrar :c</span>
