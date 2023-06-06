@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Task_ } from 'src/app/home/interfaces/task.interface';
 import { TaskManagerService } from 'src/app/home/services/task-manager.service';
 import {IonItemSliding} from '@ionic/angular'
+import { TaskDateFormatterService } from 'src/app/home/services/task-date-formatter.service';
 
 
 @Component({
@@ -17,7 +18,18 @@ export class TaskSnippetComponent implements OnInit {
   @Output()
   public onDelete:EventEmitter<string> = new EventEmitter;
 
-  constructor(private taskManagerService:TaskManagerService) { }
+  constructor(private taskManagerService:TaskManagerService, private taskDateFormatter:TaskDateFormatterService) { }
+
+
+  formatedDate(date:string):string{
+    return this.taskDateFormatter.giveFormat(date);
+  }
+
+  public giveTimeFormat(time:string):string{
+    return this.taskDateFormatter.giveTimeFormat(time);
+  }
+
+  //**************************************Task Manipulation ******************************************************/
 
   public completeTask(id:string,currentState:boolean,item:IonItemSliding):void{
     this.taskManagerService.completeTask(id,!currentState);
