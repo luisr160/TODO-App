@@ -18,7 +18,7 @@
 }
 
 .strong{
-    color: #6F7583;
+    color: #53b29f;
     font-weight: bold;
     padding-right: 5px;
 }
@@ -50,19 +50,21 @@ hr{
 }
 
 .personal-style{
-    border-color: #A5AAF9;
+    border-color: #989efa;
 }
 
 .work-style{
-    border-color: #FBE9CB;
+    border-color: #f8d79d;
 }
 
 .misc-style{
-    border-color: #FD97C8;
+    border-color: #ff7fbd;
 }
 
 ion-checkbox {
-    --checkbox-background-checked: #0d9277;
+    --checkbox-background-checked: #53b29f;
     --checkmark-width: 2px;
     --border-width: 3px;
+
+    opacity: 0.5;
 }

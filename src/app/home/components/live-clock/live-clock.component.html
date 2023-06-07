@@ -1,16 +1,12 @@
-<!-- [ngStyle]="{display: currentTime !== '' ? '' : 'none' }" -->
-<div class="live-clock"> 
+
+<div class="live-clock" [ngStyle]="{display: currentTime !== '' ? '' : 'none' }"> 
     <h1>{{date}}</h1>
     <h2>{{time}}</h2>
 </div>  
 
-<!-- <div class="live-clock-charging" [ngStyle]="{display: currentTime !== '' ? 'none' : '' }"> 
-  <img
-  src="https://samherbert.net/svg-loaders/svg-loaders/spinning-circles.svg"
-  height="60"
-  width="60"/>
-</div>   -->
-
+<div class="live-clock-charging" [ngStyle]="{display: currentTime !== '' ? 'none' : '' }"> 
+  <ion-spinner name="circles"></ion-spinner>
+</div> 
 
 
 

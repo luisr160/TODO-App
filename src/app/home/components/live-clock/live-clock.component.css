@@ -8,24 +8,31 @@
 .live-clock h1{
     font-size: 3rem;
     font-weight: bold;
-    color: #444C5E;
+    color: #53b29f;
     margin-top: 5px;
 }
 
 .live-clock h2{
     font-size: 1.7rem;
     font-weight: bold;
-    color: #6F7583;
+    color: #a4ded2;
     align-self: flex-end;
     margin-top: 5px;
 }
 
-/* .live-clock-charging{
+.live-clock-charging{
     display: flex;
     justify-content: space-evenly;
     box-shadow: 1px 6px 8px 3px rgba(0, 0, 0, 0.203); 
     border-radius: 10px;
-    background-color: rgb(145, 145, 145);
-} */
+    background-color: transparent;
+}
+
+ion-spinner{
+    --color: #0d9277;
+    height: 60px;
+    width: 60px;
+    margin: 6px;
+}
 
 
