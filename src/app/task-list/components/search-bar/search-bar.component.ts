@@ -15,7 +15,7 @@ export class SearchBarComponent implements OnInit {
   constructor() { }
 
   public searchTasks():void{
-    const searchTerm = this.searchInput;
+    const searchTerm = this.searchInput.toLowerCase();
     this.onSearch.emit(searchTerm);
   }
 

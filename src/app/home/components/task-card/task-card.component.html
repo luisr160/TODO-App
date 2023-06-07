@@ -8,7 +8,7 @@
 
     <ion-card-content>
       <div *ngIf="!isVertical; else showVertical">
-        <h4 class="strong">{{task.title}}</h4>
+        <h4 class="strong">{{task.title | titlecase}}</h4>
       
         <span>{{formatedDate(task.date)}}</span>
         <hr>
@@ -21,7 +21,7 @@
 
         <div class="header">
           <div class="text-container">
-            <h4 class="strong">{{task.title}}</h4>
+            <h4 class="strong">{{task.title |titlecase}}</h4>
             <p>{{task.description}}</p>
           </div>
           <ion-checkbox disabled="true" [checked]="true" mode="ios"></ion-checkbox>
