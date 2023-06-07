@@ -40,10 +40,57 @@
         <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
         </ion-item-option>
 
-        <ion-item-option type="button" (click)="deleteTask(snippetTask.id)" color="danger">
+        <ion-item-option [id]="snippetTask.id" type="button" color="danger">
         <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-item-option>
 
+        <!-- <ion-popover trigger="delete-trigger" triggerAction="click" [dismissOnSelect]="true">
+            <ng-template>
+              
+
+                    <ion-toolbar>
+                        <ion-title>Borrar Tarea</ion-title>
+                    </ion-toolbar>
+                    <ion-list>
+                        <ion-item [button]="true" (click)="deleteTask(snippetTask.id)">Borrar</ion-item>
+                        <ion-item [button]="true">Cancelar</ion-item>
+                    </ion-list>
+                    
+             
+            </ng-template>
+        </ion-popover> -->
+
+        
+
     </ion-item-options>
+
+    <ion-modal #modal [trigger]="snippetTask.id">
+        <ng-template>
+          <ion-content>
+            <ion-toolbar>
+              <ion-title>¿Eliminar tarea?</ion-title>
+            </ion-toolbar>
+            <ion-list class="delete-modal" lines="inset">
+                <div>
+                    <ion-item class=" delete-option modal-item" [button]="true" (click)="deleteTask(snippetTask.id)" (click)="modal.dismiss()" (click)="slidingItem.close()">
+                    
+                        Borrar
+                    
+                    </ion-item>
+                </div>
+                
+                <div>
+                    <ion-item class="modal-item" [button]="true" (click)="modal.dismiss()" (click)="slidingItem.close()">
+                    
+                        Cancelar
+                    
+                    </ion-item>
+                </div>
+                
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+
 </ion-item-sliding>
     
