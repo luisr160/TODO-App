@@ -7,7 +7,7 @@ import { format } from 'date-fns';
   templateUrl: './live-clock.component.html',
   styleUrls: ['./live-clock.component.css']
 })
-export class LiveClockComponent implements OnInit{
+export class LiveClockComponent {
 
   public currentTime:string = '';
   public date:string = '7 Jun';
@@ -17,7 +17,7 @@ export class LiveClockComponent implements OnInit{
   constructor() {
 
     setInterval(() => {
-      this.currentTime = format(new Date(),'d LLL - hh:mm aa'); //set time variable with current date
+      this.currentTime = format(new Date(),'d LLL - h:mm:ss aa'); //set time variable with current date
       [this.date,this.time] = this.currentTime.split('-');
      }, 1000);
 
@@ -27,7 +27,6 @@ export class LiveClockComponent implements OnInit{
   //   return this.liveTimeService.dateArray;
   // }
 
-  ngOnInit(): void {
-  }
+ 
 
 }

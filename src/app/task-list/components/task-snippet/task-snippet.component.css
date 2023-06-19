@@ -52,11 +52,23 @@ ion-item.personal .snippet-content ion-note{
 }
 
 ion-item.work .snippet-content ion-note{
-    --color: #F9D670;
+    --color: #f9cb41;
 }
 
-ion-item.misc .snippet-content ion-note{
+ion-item.shop .snippet-content ion-note{
     --color: #FD97C8;
+}
+
+ion-item.house .snippet-content ion-note{
+    --color: #7bc013;
+}
+
+ion-item.univer .snippet-content ion-note{
+    --color: #fdb797;
+}
+
+ion-item.expired .snippet-content ion-note{
+    --color: rgb(175, 0, 0);
 }
 
 /* ******************************************************************** */
@@ -86,14 +98,30 @@ ion-item.personal ion-checkbox{
 }
 
 ion-item.work ion-checkbox{
-    --border-color: #F9D670;
-    --border-color-checked: #F9D670;
+    --border-color: #f9cb41;
+    --border-color-checked: #f9cb41;
 }
 
-ion-item.misc ion-checkbox{
+ion-item.shop ion-checkbox{
     --border-color: #FD97C8;
     --border-color-checked: #FD97C8;
 }
+
+ion-item.house ion-checkbox{
+    --border-color: #7bc013;
+    --border-color-checked: #7bc013;
+}
+
+ion-item.univer ion-checkbox{
+    --border-color: #fdb797;
+    --border-color-checked: #fdb797;
+}
+
+ion-item.expired ion-checkbox{
+    --border-color: rgb(175, 0, 0);
+    --border-color-checked: rgb(175, 0, 0);
+}
+
 
 /* **************************************************** */
   

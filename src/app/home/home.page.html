@@ -1,54 +1,57 @@
 <ion-content [fullscreen]="true" >
+  <div class="main-container">
 
-  <div class="home-container" style="margin-bottom: 0px;">
+    <div class="home-container" style="margin-bottom: 0px;">
 
-    <app-live-clock class="live-clock"></app-live-clock>
-    
-    <div class="flex-container">
-
-      <div style="display: flex;">
-        <p class="strong-text">En progreso </p>
-        <p class="light-text">({{incompletedTasks.length}})</p>
-      </div>
+      <app-live-clock class="live-clock"></app-live-clock>
+      
+      <div class="flex-container">
   
-      <a [routerLink]="['/list']">Ver más</a>
-    </div>
-  </div>
-
-  <app-task-scroller *ngIf="numberOfIncompleteTasks !== 0; else noTasksAvailable" [taskList]="incompletedTasks" class="task-scroller-container"> </app-task-scroller>
-  
-  <ng-template #noTasksAvailable>
-    <div class="home-container">
-      <ion-icon name="cube-outline"></ion-icon>
-      <span>Nada que mostrar :c</span>
-    </div>
-  </ng-template>
+        <div style="display: flex;">
+          <p class="strong-text">En progreso </p>
+          <p class="light-text">({{incompletedTasks.length}})</p>
+        </div>
     
-
-  <div class="home-container" style="margin-top: 0px;">
-    <div class="flex-container">
-      <div style="display: flex;">
-        <p class="strong-text">Completadas </p>
+        <a [routerLink]="['/list']">Ver más</a>
       </div>
-      <a [routerLink]="['/list']">Ver más</a>
     </div>
-
-    <app-task-scroller *ngIf="numberOfCompletedTasks !== 0; else noTasksAvailable_V" [isVertical]="true" [taskList]="completedTasks" class="task-scroller-container"> </app-task-scroller>
- 
-    <ng-template #noTasksAvailable_V>
+  
+    <app-task-scroller *ngIf="numberOfIncompleteTasks !== 0; else noTasksAvailable" [taskList]="incompletedTasks" class="task-scroller-container"> </app-task-scroller>
+    
+    <ng-template #noTasksAvailable>
       <div class="home-container">
         <ion-icon name="cube-outline"></ion-icon>
         <span>Nada que mostrar :c</span>
       </div>
     </ng-template>
+      
   
-  </div>
+    <div class="home-container" style="margin-top: 0px;">
+      <div class="flex-container">
+        <div style="display: flex;">
+          <p class="strong-text">Completadas </p>
+        </div>
+        <a [routerLink]="['/list']">Ver más</a>
+      </div>
+  
+      <app-task-scroller *ngIf="numberOfCompletedTasks !== 0; else noTasksAvailable_V" [isVertical]="true" [taskList]="completedTasks" class="task-scroller-container"> </app-task-scroller>
+   
+      <ng-template #noTasksAvailable_V>
+        <div class="home-container">
+          <ion-icon name="cube-outline"></ion-icon>
+          <span>Nada que mostrar :c</span>
+        </div>
+      </ng-template>
+    
+    </div>
+  
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+      <ion-fab-button id="open-modal" mode="ios">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button id="open-modal" mode="ios">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  </div>
 
   <app-add-task></app-add-task>
  

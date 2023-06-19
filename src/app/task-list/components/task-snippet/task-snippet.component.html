@@ -6,10 +6,7 @@
         Agregar a interfaz si la tarea esta completa o no-->
 
     <ion-item 
-        [ngClass]="{'personal': snippetTask.category === 'personal',
-                    'work':snippetTask.category === 'work', 
-                    'misc':snippetTask.category === 'misc',
-                    'completed':snippetTask.isCompleted}" >
+        [ngClass]="styleClass(snippetTask)" >
 
         <ion-checkbox disabled="true" [checked]="snippetTask.isCompleted" mode="ios"></ion-checkbox>
        
@@ -36,7 +33,7 @@
     </ion-item>
 
     <ion-item-options side="end">
-        <ion-item-option type="button" (click)="completeTask(snippetTask.id,snippetTask.isCompleted,slidingItem)">
+        <ion-item-option [id]="completeID(snippetTask.id)" type="button" [disabled]="snippetTask.isCompleted">
         <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
         </ion-item-option>
 
@@ -44,27 +41,41 @@
         <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-item-option>
 
-        <!-- <ion-popover trigger="delete-trigger" triggerAction="click" [dismissOnSelect]="true">
-            <ng-template>
-              
-
-                    <ion-toolbar>
-                        <ion-title>Borrar Tarea</ion-title>
-                    </ion-toolbar>
-                    <ion-list>
-                        <ion-item [button]="true" (click)="deleteTask(snippetTask.id)">Borrar</ion-item>
-                        <ion-item [button]="true">Cancelar</ion-item>
-                    </ion-list>
-                    
-             
-            </ng-template>
-        </ion-popover> -->
-
-        
-
     </ion-item-options>
 
-    <ion-modal #modal [trigger]="snippetTask.id">
+    <ion-modal #modalComplete [trigger]="completeID(snippetTask.id)">
+        <ng-template>
+          <ion-content>
+            <ion-toolbar>
+              <ion-title>¿Completar Tarea?</ion-title>
+            </ion-toolbar>
+            <ion-list class="modal" lines="inset">
+                <div>
+                    <ion-item 
+                      class=" complete-option modal-item" 
+                      [button]="true" 
+                      (click)="completeTask(snippetTask.id,snippetTask.isCompleted,slidingItem)"
+                      (click)="modalComplete.dismiss()" 
+                      (click)="slidingItem.close()">
+                      Completar
+                    </ion-item>
+                </div>
+                
+                <div>
+                    <ion-item 
+                      class="modal-item" 
+                      [button]="true" 
+                      (click)="modalComplete.dismiss()" 
+                      (click)="slidingItem.close()">
+                      Cancelar                  
+                    </ion-item>
+                </div>
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+
+    <ion-modal #modalDelete [trigger]="snippetTask.id">
         <ng-template>
           <ion-content>
             <ion-toolbar>
@@ -72,7 +83,7 @@
             </ion-toolbar>
             <ion-list class="delete-modal" lines="inset">
                 <div>
-                    <ion-item class=" delete-option modal-item" [button]="true" (click)="deleteTask(snippetTask.id)" (click)="modal.dismiss()" (click)="slidingItem.close()">
+                    <ion-item class=" delete-option modal-item" [button]="true" (click)="deleteTask(snippetTask.id)" (click)="modalDelete.dismiss()" (click)="slidingItem.close()">
                     
                         Borrar
                     
@@ -80,7 +91,7 @@
                 </div>
                 
                 <div>
-                    <ion-item class="modal-item" [button]="true" (click)="modal.dismiss()" (click)="slidingItem.close()">
+                    <ion-item class="modal-item" [button]="true" (click)="modalDelete.dismiss()" (click)="slidingItem.close()">
                     
                         Cancelar
                     

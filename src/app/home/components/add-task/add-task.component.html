@@ -8,7 +8,7 @@
                     <div>
                         <ion-label position="floating">Titulo</ion-label>
                         <ion-input class="custom" fill="outline" 
-                        formControlName="title" [(ngModel)]="newTaskData.title" 
+                        formControlName="title" 
                         name="title" type="text" 
                         [counter]="true"
                         maxlength="20"
@@ -17,16 +17,14 @@
                         
                     <div>
                         <ion-label position="floating">Categoría</ion-label>
-                        <ion-select class="custom" interface="popover" formControlName="category" fill="outline" [(ngModel)]="newTaskData.category" name="category" placeholder="Selecciona una categoría">
-                            <ion-select-option value="personal">Personal</ion-select-option>
-                            <ion-select-option value="work">Work</ion-select-option>
-                            <ion-select-option value="misc">Miscelaneous</ion-select-option>
+                        <ion-select class="custom"  interface="popover" formControlName="category" fill="outline" name="category" placeholder="Selecciona una categoría">
+                            <ion-select-option *ngFor="let category of categories" [value]="category">{{category}}</ion-select-option>
                         </ion-select>
                     </div>        
                         
                     <div>
                         <ion-label position="floating">Descripción</ion-label>
-                        <ion-textarea [(ngModel)]="newTaskData.description" formControlName="description" class="custom" name="description"
+                        <ion-textarea formControlName="description" class="custom" name="description"
                             fill="outline" 
                             [autoGrow]="true"
                             maxlength="80"
@@ -38,18 +36,18 @@
                     <div class="date-container">
                             <div>
                                 <ion-label position="floating">Fecha</ion-label>
-                                <ion-input class="custom date-time-input" fill="outline" formControlName="date" [(ngModel)]="newTaskData.date" name="date" type="date" [min]="today" placeholder="mm/dd/yyyy"></ion-input>
+                                <ion-input class="custom date-time-input" fill="outline" formControlName="date" name="date" type="date" [min]="today" placeholder="mm/dd/yyyy"></ion-input>
                             </div>
                             
                             <div>
                                 <ion-label position="floating">Hora</ion-label>
-                                <ion-input class="custom date-time-input" fill="outline" formControlName="hour" [(ngModel)]="newTaskData.hour" name="hour" type="time" placeholder="hh:mm --"></ion-input>
+                                <ion-input class="custom date-time-input" fill="outline" formControlName="hour" name="hour" type="time" placeholder="hh:mm --"></ion-input>
                             </div>
                     </div>
             
                     <div class="button-container">
                         <ion-button class="add-task-button" fill="outline" color="danger" (click)="onCancel()">Cancelar</ion-button>
-                        <ion-button class="add-task-button" type = 'submit' color="primary" [disabled]="addTaskForm.invalid">Crear</ion-button>
+                        <ion-button class="add-task-button" type = 'submit' color="primary" (click)="presentToast('top')" [disabled]="addTaskForm.invalid">Crear</ion-button>
                     </div>
                 </form>
                 

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Task_ } from '../interfaces/task.interface';
 import { v4 as uuid } from 'uuid';
+import { Category } from '../interfaces/categories.interface';
+import { TaskDateFormatterService } from './task-date-formatter.service';
 
 @Injectable({
   providedIn: 'root'
@@ -46,9 +48,21 @@ export class TaskManagerService {
     // }
   ];
 
-  constructor() { 
+  private _category : Category[] = [
+    Category.University,
+    Category.Work,
+    Category.Shopping,
+    Category.House,
+    Category.Personal
+]
+
+  constructor(private dateFormatter:TaskDateFormatterService) { 
       this.loadLocalStorage();
    }
+
+   get categories() : Category[] {
+    return [...this._category];
+  }
 
    get tasks(){
     return [...this._taskList]
@@ -77,11 +91,36 @@ export class TaskManagerService {
   }
 
   public searchTasks(term:string):Task_[]{
-    if(term === ''){
+    if( !term ){
       return this.tasks;
     }
+
+    term.toLocaleLowerCase();
     
-    return this._taskList.filter(task => task.title.includes(term));
+    return this._taskList.filter(task => {
+       return task.title.toLowerCase().includes(term) || 
+       task.category.toLowerCase().includes(term)
+    });
+  }
+
+  public taskProgress():void{
+
+    this._taskList.forEach( task => { 
+
+      const [year,month,day,hour,minute] = this.dateFormatter.toNumberFormat(task.date, task.hour);
+      
+
+      if(new Date() > new Date(year,month-1,day,hour,minute)  && !task.isCompleted){
+        task.isExpired = true;
+        task.isCompleted = true;
+
+        task.title = task.title.concat('- Expirada');
+        
+      }
+
+    })
+
+    this.saveLocalStorage();
   }
 
   //*************************************Local Storage Stuff************************************************** */

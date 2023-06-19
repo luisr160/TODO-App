@@ -12,7 +12,11 @@ export class HomePage {
 
   public TaskList:Task_[] = [];
 
-  constructor(private taskManagerService:TaskManagerService) { }
+  constructor(private taskManagerService:TaskManagerService) { 
+    setInterval(() => {
+      this.taskManagerService.taskProgress();
+     }, 1500);
+   }
 
   get numberOfIncompleteTasks():number{
     return this.taskManagerService.tasks.filter(task => !task.isCompleted).length;
@@ -30,7 +34,5 @@ export class HomePage {
     return this.taskManagerService.tasks.filter(task => !task.isCompleted)
   }
 
-  ngOnInit(): void {
-  }
 
 }

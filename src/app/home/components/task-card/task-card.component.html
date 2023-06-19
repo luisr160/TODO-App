@@ -1,10 +1,5 @@
 <ion-card  
-    [ngClass]="{
-        'horizontal-strip custom-card': !isVertical,
-        'vertical-strip custom-card-vertical':isVertical,
-        'personal-style': task.category === 'personal',
-        'work-style': task.category === 'work',
-        'misc-style': task.category === 'misc'}">
+  [ngClass]="styleClass(isVertical,task)">
 
     <ion-card-content>
       <div *ngIf="!isVertical; else showVertical">

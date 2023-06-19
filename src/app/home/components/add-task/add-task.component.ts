@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Task_ } from '../../interfaces/task.interface';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { TaskManagerService } from '../../services/task-manager.service';
 import { format } from 'date-fns';
+import { Category } from '../../interfaces/categories.interface';
 
 @Component({
   selector: 'app-add-task',
@@ -15,18 +16,16 @@ export class AddTaskComponent implements OnInit {
   public today:string = format(new Date(), "yyyy-LL-dd");
 
   public addTaskForm:FormGroup = new FormGroup({});
-  
-  public newTaskData:Task_ = {
-    id:'',
-    title:'',
-    category:'',
-    description:'',
-    date:'mm/dd/yyyy',
-    hour:'--:-- --',
-    isCompleted:false
-  }
 
-  constructor(private formBuilder:FormBuilder, private modalCtrl:ModalController, private taskManager:TaskManagerService) { }
+  public categories:Category[] = [];
+
+  constructor(
+    private formBuilder:FormBuilder, 
+    private modalCtrl:ModalController, 
+    private taskManager:TaskManagerService, 
+    private toastCtrl: ToastController
+    ) 
+    { this.categories = taskManager.categories }
 
   ngOnInit(): void {
     this.addTaskForm = this.formBuilder.group({
@@ -45,9 +44,21 @@ export class AddTaskComponent implements OnInit {
   }
 
   submitForm():Promise<boolean>{
-    this.newTaskData.title = this.newTaskData.title.toLowerCase();
-    this.taskManager.addTask(this.newTaskData);
+    this.taskManager.addTask({isCompleted:false, isExpired:false , ...this.addTaskForm.value});
     this.addTaskForm.reset();
     return this.modalCtrl.dismiss(null,'cancel');
+  }
+
+  async presentToast(position: 'top' | 'middle' | 'bottom') {
+    const toast = await this.toastCtrl.create({
+      icon : 'checkmark-circle',
+      color: 'light',
+      message: '¡Tarea Agregada!',
+      duration: 2000,
+      position: position,
+      cssClass: 'toast-task'
+    });
+
+    await toast.present();
   }
 }

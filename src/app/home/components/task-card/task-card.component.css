@@ -50,15 +50,63 @@ hr{
 }
 
 .personal-style{
-    border-color: #989efa;
+    border-color: #A5AAF9;
 }
 
 .work-style{
-    border-color: #f8d79d;
+    border-color: #f9cb41;
 }
 
-.misc-style{
-    border-color: #ff7fbd;
+.shopping-style{
+    border-color: #FD97C8;
+}
+
+.house-style{
+    border-color: #7bc013;
+}
+
+.university-style{
+    border-color: #fdb797;
+}
+
+.expired-style{
+    border-color: rgb(175, 0, 0);
+}
+
+.expired-style .strong{
+    color: rgb(175, 0, 0);
+    text-decoration: line-through;
+}
+
+.personal-style ion-checkbox{
+    --border-color: #A5AAF9;
+    --border-color-checked: #A5AAF9;
+}
+
+.work-style ion-checkbox{
+    --border-color: #f9cb41;
+    --border-color-checked: #f9cb41;
+}
+
+.shopping-style ion-checkbox{
+    --border-color: #FD97C8;
+    --border-color-checked: #FD97C8;
+}
+
+.house-style ion-checkbox{
+    --border-color: #7bc013;
+    --border-color-checked: #7bc013;
+}
+
+.university-style ion-checkbox{
+    --border-color: #fdb797;
+    --border-color-checked: #fdb797;
+}
+
+.expired-style ion-checkbox {
+    --checkbox-background-checked: rgb(175, 0, 0)  ;
+    --border-color-checked: rgb(175, 0, 0);
+
 }
 
 ion-checkbox {
