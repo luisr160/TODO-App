@@ -164,7 +164,7 @@ ion-toolbar{
     text-align: center;
 }
 
-.delete-modal{
+.modal{
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -173,6 +173,10 @@ ion-toolbar{
 
 ion-item.delete-option{
     color: rgb(255, 82, 82);
+}
+
+ion-item.complete-option{
+    color: rgb(36, 138, 42);
 }
 
 ion-item.modal-item{
