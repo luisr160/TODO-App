@@ -31,9 +31,10 @@ export class TaskDateFormatterService {
 
   }
 
-  public giveTimeFormat(time:string):string{
+  public giveTimeFormat(time:string,date:string):string{
+    const [year, month, day] = date.split('-');
     const [hour, minute] = time.split(':')
-    return format(new Date(2022, 4, 19, Number(hour), Number(minute)), "hh:mm a");
+    return format(new Date(Number(year), Number(month)-1, Number(day), Number(hour), Number(minute)), "hh:mm a");
   }
 
   public toNumberFormat(date:string, time:string):number[]{

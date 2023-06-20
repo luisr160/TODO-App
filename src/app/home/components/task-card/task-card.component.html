@@ -24,7 +24,7 @@
 
         <hr>
         <span class="strong">{{formatedDate(task.date).split(' ')[1] | titlecase }} {{formatedDate(task.date).split(' ')[0]}}</span>
-        <span>{{giveTimeFormat(task.hour)}}</span>
+        <span>{{giveTimeFormat(task.hour,task.date)}}</span>
       </ng-template>
       
     </ion-card-content>

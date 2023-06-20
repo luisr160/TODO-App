@@ -35,8 +35,8 @@ export class TaskCardComponent  {
     return this.taskDateFormatter.giveFormat(date);
   }
 
-  public giveTimeFormat(time:string):string{
-    return this.taskDateFormatter.giveTimeFormat(time);
+  public giveTimeFormat(time:string,date:string):string{
+    return this.taskDateFormatter.giveTimeFormat(time,date);
   }
 
 

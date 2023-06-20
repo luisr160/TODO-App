@@ -24,7 +24,7 @@
                     <span class="strong">{{snippetTask.title | titlecase }}</span>
                     <div>
                         <span class="strong-small">{{formatedDate(snippetTask.date).split(' ')[1] | titlecase }} {{formatedDate(snippetTask.date).split(' ')[0]}}</span>
-                        <span class="light">{{giveTimeFormat(snippetTask.hour)}}</span>
+                        <span class="light">{{giveTimeFormat(snippetTask.hour,snippetTask.date)}}</span>
                     </div>
                     
                 </div>

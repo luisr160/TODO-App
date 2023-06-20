@@ -38,12 +38,12 @@ export class TaskSnippetComponent implements OnInit {
   constructor(private taskManagerService:TaskManagerService, private taskDateFormatter:TaskDateFormatterService) { }
 
 
-  formatedDate(date:string):string{
+  public formatedDate(date:string):string{
     return this.taskDateFormatter.giveFormat(date);
   }
 
-  public giveTimeFormat(time:string):string{
-    return this.taskDateFormatter.giveTimeFormat(time);
+  public giveTimeFormat(time:string,date:string):string{
+    return this.taskDateFormatter.giveTimeFormat(time,date);
   }
 
   //**************************************Task Manipulation ******************************************************/

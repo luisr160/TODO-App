@@ -10,42 +10,56 @@ import { TaskDateFormatterService } from './task-date-formatter.service';
 export class TaskManagerService {
 
   private _taskList:Task_[] = [
-    // {
-    //   id: uuid(),
-    //   title:'Task 1',
-    //   category: 'personal',
-    //   description: 'Esto es una descripción de la prueba.',
-    //   date:'2023-06-05',
-    //   hour:'9:07',
-    //   isCompleted : true
-    // },
-    // {
-    //   id: uuid(),
-    //   title:'Task 2',
-    //   category: 'work',
-    //   description: 'Esto es una descripción de la prueba.',
-    //   date:'2023-06-04',
-    //   hour:'9:07',
-    //   isCompleted : false
-    // },
-    // {
-    //   id: uuid(),
-    //   title:'Task 3',
-    //   category: 'misc',
-    //   description: 'Esto es una descripción de la prueba.',
-    //   date:'2023-01-30',
-    //   hour:'9:07',
-    //   isCompleted : true
-    // },
-    // {
-    //   id: uuid(),
-    //   title:'Task 4',
-    //   category: 'personal',
-    //   description: 'Esto es una descripción de la prueba.',
-    //   date:'2023-06-06',
-    //   hour:'9:07',
-    //   isCompleted : false
-    // }
+    {
+      id: 'pruebas',
+      title:'Task 1',
+      category: Category.Personal,
+      description: 'Esto es una descripción de la prueba.',
+      date:'2023-06-05',
+      hour:'9:07',
+      isCompleted : true,
+      isExpired:false
+    },
+    {
+      id: 'pruebas-del',
+      title:'Task 2',
+      category: Category.Work,
+      description: 'Esto es una descripción de la prueba.',
+      date:'2023-06-04',
+      hour:'9:07',
+      isCompleted : false,
+      isExpired:false
+    },
+    {
+      id: uuid(),
+      title:'Task 3',
+      category: Category.Shopping,
+      description: 'Esto es una descripción de la prueba.',
+      date:'2023-01-30',
+      hour:'9:07',
+      isCompleted : true,
+      isExpired:false
+    },
+    {
+      id: 'prueba-complete',
+      title:'Task 4',
+      category: Category.University,
+      description: 'Esto es una descripción de la prueba.',
+      date:'2023-06-06',
+      hour:'9:07',
+      isCompleted : false,
+      isExpired:false
+    },
+    {
+      id: uuid(),
+      title:'Task 5',
+      category: Category.Shopping,
+      description: 'Esto es una descripción de la prueba.',
+      date:'2023-06-06',
+      hour:'9:07',
+      isCompleted : false,
+      isExpired:false
+    }
   ];
 
   private _category : Category[] = [
@@ -95,7 +109,7 @@ export class TaskManagerService {
       return this.tasks;
     }
 
-    term.toLocaleLowerCase();
+    term = term.toLowerCase();
     
     return this._taskList.filter(task => {
        return task.title.toLowerCase().includes(term) || 

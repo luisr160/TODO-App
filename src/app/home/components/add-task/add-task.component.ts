@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Task_ } from '../../interfaces/task.interface';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { ModalController, ToastController } from '@ionic/angular';
 import { TaskManagerService } from '../../services/task-manager.service';
@@ -38,7 +37,6 @@ export class AddTaskComponent implements OnInit {
   }
 
   public onCancel():Promise<boolean>{
-    console.log(this.addTaskForm.value)
     this.addTaskForm.reset();
     return this.modalCtrl.dismiss(null,'cancel');
   }
