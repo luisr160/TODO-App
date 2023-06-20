@@ -3,6 +3,7 @@ import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { ModalController, ToastController } from '@ionic/angular';
 import { TaskManagerService } from '../../services/task-manager.service';
 import { format } from 'date-fns';
+import { v4 as uuid } from 'uuid';
 import { Category } from '../../interfaces/categories.interface';
 
 @Component({
@@ -28,6 +29,7 @@ export class AddTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.addTaskForm = this.formBuilder.group({
+      id:[uuid()],
       title:['',Validators.required],
       category:['',Validators.required],
       description:['',Validators.required],

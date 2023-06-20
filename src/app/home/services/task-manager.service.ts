@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Task_ } from '../interfaces/task.interface';
-import { v4 as uuid } from 'uuid';
 import { Category } from '../interfaces/categories.interface';
 import { TaskDateFormatterService } from './task-date-formatter.service';
 
@@ -9,58 +8,7 @@ import { TaskDateFormatterService } from './task-date-formatter.service';
 })
 export class TaskManagerService {
 
-  private _taskList:Task_[] = [
-    {
-      id: 'pruebas',
-      title:'Task 1',
-      category: Category.Personal,
-      description: 'Esto es una descripción de la prueba.',
-      date:'2023-06-05',
-      hour:'9:07',
-      isCompleted : true,
-      isExpired:false
-    },
-    {
-      id: 'pruebas-del',
-      title:'Task 2',
-      category: Category.Work,
-      description: 'Esto es una descripción de la prueba.',
-      date:'2023-06-04',
-      hour:'9:07',
-      isCompleted : false,
-      isExpired:false
-    },
-    {
-      id: uuid(),
-      title:'Task 3',
-      category: Category.Shopping,
-      description: 'Esto es una descripción de la prueba.',
-      date:'2023-01-30',
-      hour:'9:07',
-      isCompleted : true,
-      isExpired:false
-    },
-    {
-      id: 'prueba-complete',
-      title:'Task 4',
-      category: Category.University,
-      description: 'Esto es una descripción de la prueba.',
-      date:'2023-06-06',
-      hour:'9:07',
-      isCompleted : false,
-      isExpired:false
-    },
-    {
-      id: uuid(),
-      title:'Task 5',
-      category: Category.Shopping,
-      description: 'Esto es una descripción de la prueba.',
-      date:'2023-06-06',
-      hour:'9:07',
-      isCompleted : false,
-      isExpired:false
-    }
-  ];
+  private _taskList:Task_[] = [];
 
   private _category : Category[] = [
     Category.University,
@@ -83,8 +31,9 @@ export class TaskManagerService {
   }
 
   public addTask(task:Task_):void{
-    const newTask:Task_ = {...task, id:uuid()};
+    const newTask:Task_ = {...task};
     this._taskList.push(newTask);
+  
     this.saveLocalStorage();
   }
 
