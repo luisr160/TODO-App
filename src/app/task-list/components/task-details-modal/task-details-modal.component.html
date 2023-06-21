@@ -1,0 +1,41 @@
+<ion-modal #modal [trigger]="modalID">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar>
+          <ion-title>Detalles</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="light" (click)="modal.dismiss()">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <ion-list>
+          <ion-item>
+            <ion-label>
+              <h1>{{detailTask.title | titlecase}}</h1>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              Categoría:
+              <p>{{detailTask.category}}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              Fecha y Hora:
+              <p>{{formatedDate(detailTask.date).split(' ')[1] | titlecase }} {{formatedDate(detailTask.date).split(' ')[0]}} - {{giveTimeFormat(detailTask.hour,detailTask.date)}}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <div class="description-label">
+                Descripción:
+                <p>{{detailTask.description}}</p>
+              </div>
+              
+            </ion-label>
+          </ion-item>
+         
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>

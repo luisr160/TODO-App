@@ -1,9 +1,7 @@
 
 <ion-item-sliding #slidingItem>
-    <!-- TODO: 
-        Conectar task list page con el servicio de tasks.
-        Interpolar campos dentro del snippet.
-        Agregar a interfaz si la tarea esta completa o no-->
+
+    <task-details-modal [detailTask]="snippetTask" [modalID]="detailsID(snippetTask.id)"></task-details-modal>
 
     <ion-item 
         [ngClass]="styleClass(snippetTask)" >
@@ -12,13 +10,18 @@
        
             <div class="snippet-content">
 
-                <ion-note 
-                    
-                    class="snippet-category personal">
-                    
-                    {{snippetTask.category | titlecase}}
-                    
-                </ion-note>
+                <div class="first-row-content">
+                  <ion-note 
+                      
+                      class="snippet-category personal">
+                      
+                      {{snippetTask.category | titlecase}}
+                      
+                  </ion-note>
+
+                  <a [id]="detailsID(snippetTask.id)">Detalles</a>
+
+                </div>
                 
                 <div class="second-row-content">
                     <span class="strong">{{snippetTask.title | titlecase }}</span>

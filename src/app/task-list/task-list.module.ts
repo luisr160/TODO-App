@@ -6,6 +6,7 @@ import { FormsModule} from '@angular/forms';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { TaskListPageRoutingModule } from './task-list-routing.module';
 import { IonicModule } from '@ionic/angular';
+import { TaskDetailsModalComponent } from './components/task-details-modal/task-details-modal.component';
 
 
 
@@ -13,7 +14,8 @@ import { IonicModule } from '@ionic/angular';
   declarations: [
     TaskListPageComponent,
     TaskSnippetComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    TaskDetailsModalComponent
   ],
   imports: [
     CommonModule,

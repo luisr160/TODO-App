@@ -7,6 +7,12 @@
     flex: auto;
 }
 
+.first-row-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .second-row-content{
     display: flex;
     min-width: 62.5vw;
@@ -45,6 +51,15 @@ ion-note.snippet-category{
     font-weight: bold;
     font-size: 14px;
     opacity: 0.8;
+}
+
+.first-row-content a{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 14px;
+    opacity: 0.8;
+    text-decoration: underline;
+    color:#53b29f;
 }
 
 ion-item.personal .snippet-content ion-note{

@@ -31,9 +31,7 @@ export class TaskManagerService {
   }
 
   public addTask(task:Task_):void{
-    const newTask:Task_ = {...task};
-    this._taskList.push(newTask);
-  
+    this._taskList.push({...task});
     this.saveLocalStorage();
   }
 

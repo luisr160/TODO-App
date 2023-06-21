@@ -19,8 +19,14 @@ export class TaskSnippetComponent implements OnInit {
   @Output()
   public onDelete:EventEmitter<string> = new EventEmitter;
 
+  constructor(private taskManagerService:TaskManagerService, private taskDateFormatter:TaskDateFormatterService) { }
+
   public completeID (id:string){
     return 'comp-'+id;
+  }
+
+  public detailsID (id:string){
+    return 'detail-'+id;
   }
 
   public styleClass (snipTask:Task_):Object {
@@ -34,9 +40,6 @@ export class TaskSnippetComponent implements OnInit {
       'expired': snipTask.isExpired
     }  
   }
-
-  constructor(private taskManagerService:TaskManagerService, private taskDateFormatter:TaskDateFormatterService) { }
-
 
   public formatedDate(date:string):string{
     return this.taskDateFormatter.giveFormat(date);

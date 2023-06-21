@@ -3,6 +3,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     /* height: 200px; */
+    
 }
 
 .task-scroller-vertical{
@@ -10,5 +11,6 @@
     width: 90vw;
 
 }
+
 
 
